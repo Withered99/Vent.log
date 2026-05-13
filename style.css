@@ -1,0 +1,126 @@
+:root {
+    --bg-color: #0b0f1a;
+    --card-bg: #161e2d;
+    --text-main: #f8fafc;
+    --crewmate: #3b82f6;
+    --impostor: #ef4444;
+    --neutral: #eab308;
+    --accent: #a855f7;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header { text-align: center; margin-bottom: 40px; }
+h1 { font-size: 3.5rem; color: var(--accent); margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Controls & Filters */
+.search-container { max-width: 800px; margin: 20px auto; }
+
+#roleSearch {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 2px solid #334155;
+    background: var(--card-bg);
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.controls-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#sortSelect {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: white;
+    border: 1px solid #334155;
+    cursor: pointer;
+}
+
+#tagFilters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-tag-btn {
+    background: #1e293b;
+    border: 1px solid #475569;
+    color: #94a3b8;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.filter-tag-btn:hover { border-color: var(--accent); color: white; }
+.filter-tag-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+/* Grid & Cards */
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.role-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    border-bottom: 4px solid #475569;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.role-card:hover { transform: translateY(-5px); background: #1e293b; }
+.role-card.crewmate { border-color: var(--crewmate); }
+.role-card.impostor { border-color: var(--impostor); }
+.role-card.neutral { border-color: var(--neutral); }
+
+/* Details Page */
+.detail-container { max-width: 800px; margin: 40px auto; background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+.back-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.detail-header { border-bottom: 2px solid #334155; padding-bottom: 20px; margin-bottom: 20px; }
+.tag {
+    display: inline-block;
+    background: #334155;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    margin-right: 8px;
+    color: #cbd5e1;
+}
+
+.ability-list { background: #0f172a; padding: 20px; border-radius: 12px; border: 1px solid #334155; margin-top: 15px; }
+.ability-item { margin-bottom: 15px; border-bottom: 1px solid #1e293b; padding-bottom: 15px; }
+.ability-item:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+.ability-item strong { color: var(--accent); display: block; font-size: 1.1rem; margin-bottom: 4px; }

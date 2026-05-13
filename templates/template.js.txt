@@ -1,0 +1,8 @@
+{
+    id: "role-id-lowercase",
+    name: "Role Name",
+    faction: "crewmate", // Use 'crewmate', 'impostor', or 'neutral'
+    tags: ["TOU: Mira", "The Other Roles"],
+    summary: "A short one-sentence hook for the card view.",
+    details: "The full breakdown of how the role works, including cooldowns, buttons, and win conditions."
+},

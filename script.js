@@ -76,6 +76,50 @@ const roles = [
         abilities: [
             { name: "Mediate", effect: "Project your spirit outside your body for some time to uncover clues. Once time is up, return to your mortal flesh, and ghosts will disappear." }
         ]
+    },
+    {
+        id: "mystic",
+        name: "Mystic",
+        faction: "crewmate",
+        tags: ["TOU: Mira", "TOU: Reactivated"],
+        summary: "Know where and when kills happen!",
+        details: "The Mystic is alerted whenever someone dies, seeing a blue flash and a brief arrow pointing in the direction of the death.",
+        abilities: [],
+        displayAbilities: false
+    },
+    {
+        id: "seer",
+        name: "Seer",
+        faction: "crewmate",
+        tags: ["TOU: Mira", "TOU: Reactivated", "TheOtherRoles"],
+        summary: "Reveal alliances to find evildoers!",
+        details: "The Seer can compare the alignments of other players, learning if players are friendly or enemies by using their Intuit and Gaze abilities, or Reveal if comparing alignments only.",
+        abilities: [
+            { name: "Intuit", effect: "Chooses a player to compare alliances of others to. The target can be changed within the same round."},
+            { name: "Gaze", effect: "Reveals the alliance between the target players when comparing alignments."},
+            { name: "Reveal", effect: "Reveals the alliance of target players when revealing alignments only."}
+        ]
+    },
+    {
+        id: "snitch",
+        name: "Snitch",
+        faction: "crewmate",
+        tags: ["TOU: Mira", "TOU: Reactivated", "TheOtherRoles", "AllTheRoles"],
+        summary: "Complete your tasks to find the Impostors!",
+        details: "The Snitch must race to complete their tasks in order to reveal the Impostors. Upon completing all tasks, the Impostors will be revealed to the Snitch with arrows and red names. However, the Snitch will also be revealed to the Impostors. The Snitch must survive to the next meeting and cannot be shot by the Impostors once revealed.",
+        abilities: [],
+        displayAbilities: false
+    },
+    {
+        id: "tracker",
+        name: "Tracker/Sonar",
+        faction: "crewmate",
+        tags: ["TOU: Mira", "TOU: Reactivated", "TheOtherRoles", "AllTheRoles", "StellarRolesAU"],
+        summary: "Track suspicious players to see where they go!",
+        details: "The Sonar can place markers on other players to track their general location. By placing a marker, the Tracker will see an arrow pointing towards the tracked player's position across the map. The arrows match the tracked player's colour, and will update at set intervals, allowing the Tracker to follow suspicious players and identify unusual movement.",
+        abilities: [
+            { name: "Track", effect: "Places a tracker (arrow) on a player, making it so that the player's location is visible to the Tracker, updating periodically."}
+        ]
     }
 ];
 

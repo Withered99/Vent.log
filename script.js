@@ -11,6 +11,39 @@ const roles = [
         displayAbilities: false
     },
     {
+        id: "trackerv",
+        name: "Tracker",
+        faction: "crewmate",
+        tags: ["Vanilla"],
+        summary: "Plant a tracker on a Crewmate to watch their movements on the map.",
+        details: "Tracker is a role in Among Us. It based on the Crewmate role, with the additional ability to track other players. They can track a player using their Track ability when near them for a limited amount of time, and can see the location of their target on their map.",
+        abilities: [
+            { name: "Track", effect: "The Track ability lets the Tracker track a player on their map, but only when near a player. After tracking, a player icon will appear on the personal map, and the location of the target can be seen for a limited amount of time." }
+        ]
+    },
+    {
+        id: "scientistv",
+        name: "Scientist",
+        faction: "crewmate",
+        tags: ["Vanilla"],
+        summary: "Access vitals at anytime. Complete tasks to recharge your battery.",
+        details: "Scientist is a role in Among Us, first shown during the Summer Game Fest. It is based on the Crewmate role with the added ability to view the Vitals interface from anywhere on the map.",
+        abilities: [
+            { name: "Vitals", effect: "Scientists have a portable Vitals monitor that allows them to view the Vitals interface from anywhere on the map, including maps that otherwise do not have a stationary Vitals monitor, such as The Skeld and MIRA HQ. The portable Vitals monitor has a battery that drains upon use but recharges as the Scientist completes tasks or automatically recharges if they have completed all of their tasks." }
+        ]
+    },
+    {
+        id: "engineerv",
+        name: "Engineer",
+        faction: "crewmate",
+        tags: ["Vanilla"],
+        summary: "Engineer is a role in Among Us. It is based on the Crewmate role with the added ability to travel through vents.",
+        details: "While usually an ability that is exclusive to Impostors, Engineers are also able to travel through vents. However, Engineers can only stay in a vent for a limited time and must wait for a period of time before they can use another vent. Engineers cannot travel through vents while Comms Sabotaged is active. Similar to Impostors, they also cannot enter a vent if the vent is being used for Clean Vent (however, this does not prevent the Engineer from using the vent system said vent is connected to).",
+        abilities: [
+            { name: "Vitals", effect: "Scientists have a portable Vitals monitor that allows them to view the Vitals interface from anywhere on the map, including maps that otherwise do not have a stationary Vitals monitor, such as The Skeld and MIRA HQ. The portable Vitals monitor has a battery that drains upon use but recharges as the Scientist completes tasks or automatically recharges if they have completed all of their tasks." }
+        ]
+    },
+    {
         id: "impostor",
         name: "Impostor",
         faction: "impostor",
@@ -119,6 +152,28 @@ const roles = [
         details: "The Sonar can place markers on other players to track their general location. By placing a marker, the Tracker will see an arrow pointing towards the tracked player's position across the map. The arrows match the tracked player's colour, and will update at set intervals, allowing the Tracker to follow suspicious players and identify unusual movement.",
         abilities: [
             { name: "Track", effect: "Places a tracker (arrow) on a player, making it so that the player's location is visible to the Tracker, updating periodically."}
+        ]
+    },
+    {
+        id: "spy",
+        name: "Spy",
+        faction: "crewmate",
+        tags: ["TOU: Mira", "TOU: Reactivated", "TheOtherRoles", "AllTheRoles", "StellarRolesAU"],
+        summary: "Snoop around and find stuff out!",
+        details: "The Spy gains extra information by using the Admin table. When viewing Admin, the Spy sees the locations of all living players across the map, identified by their colours, making it easier to track and verify locations when giving alibis. The map will update whenever a player moves from one area to another, including through vent systems, as long as they are in a named location (they will not be visible outside or in hallways). Depending on settings, the Spy may also have access to a Portable Admin table, which they can activate remotely and recharge by completing tasks.",
+        abilities: [
+            { name: "Admin", effect: "Opens up the admin table for a set total duration between uses."}
+        ]
+    },
+    {
+        id: "trapper",
+        name: "Trapper",
+        faction: "crewmate",
+        tags: ["TOU: Mira", "TOU: Reactivated", "TheOtherRoles", "AllTheRoles", "StellarRolesAU"],
+        summary: "Catch Killers in the Act!",
+        details: "The Trapper can place traps around the map to learn the roles of other players. Players must stand in, or walk through, the trap for a set time to 'trap' their roles. The Trapper will see a list of the roles in the next meeting, in a randomised order.",
+        abilities: [
+            { name: "Trap", effect: "Places down a trap that detects and stores the roles of people within its range after a few seconds"}
         ]
     },
     {

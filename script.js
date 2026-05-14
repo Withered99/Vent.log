@@ -4,11 +4,66 @@ const roles = [
         id: "crewmate",
         name: "Crewmate",
         faction: "crewmate",
-        tags: ["Vanilla Classic"],
+        tags: ["Vanilla"],
         summary: "The standard Crewmate.",
         details: "Do tasks or vote out Imposters to win.",
         abilities: [],
         displayAbilities: false
+    },
+    {
+        id: "vguardian_angel",
+        name: "Guardian Angel",
+        faction: "crewmate",
+        tags: ["Vanilla"],
+        summary: "Cast protection shield around the remaining crew.",
+        details: "The Guardian Angel is a role in Among Us. It is based on the Crewmate role with the added ability to cast a protective shield around a living player as a ghost.",
+        abilities: [
+            { name: "Protect", effect: "As a ghost, the Guardian Angel has access to the Protect ability, which allows them to cast a protective shield around any living player for a limited time. The shield prevents Crewmates from being killed by Impostors. This ability replaces the Haunt ability that other ghosts can use by default, meaning Guardian Angels cannot use the Haunt ability." }
+        ]
+    },
+    {
+        id: "vnoisemaker",
+        name: "Noisemaker",
+        faction: "crewmate",
+        tags: ["Vanilla"],
+        summary: "Alert all Crewmates of your location when you're killed.",
+        details: "Noisemaker is a role in Among Us. It is based on the Crewmate role, but it sends out an alert when killed by An Impostor. Living Crewmates will see the alert and know where the body is, by a mark on their screen.",
+        abilities: [],
+        displayAbilities: false
+    },
+    {
+        id: "vdetective",
+        name: "Detective",
+        faction: "crewmate",
+        tags: ["Vanilla"],
+        summary: "Add info to Notes. Interrogate Crewmates.",
+        details: "Detective is a role in Among Us. It is based on the Crewmate role with added abilities which allow for further research on kills.",
+        abilities: [
+            { name: "Notes", effect: "The Notes Ability lets the Detective document information about a kill, namely the location of the body and type of Impostor suspected to have killed the victim." },
+            { name: "Interrogate", effect: "The Interrogate Ability lets the Detective find out where a player was at the time of the murder. The suspects per case file do not reset on a meeting or a new meeting, it is a fixed amount that is given whenever a dead player is known to be deceased (failing to show up in the meeting or their body gets reported). The distance to interrogate someone cannot be adjusted, as the distance to interrogate someone has to be extremely close (enough for both players to be touching). When a Shapeshifter who has turned into someone else is interrogated, the files will show the 'shapeshifted player' to be in the same location as the body died, but when a meeting is called these files will adjust to the 'Real Shapeshifter's color', so be aware of the colors/names of the people you interrogate as the files will adjust to the correct information when a meeting is called." }
+        ]
+    },
+    {
+        id: "vshapeshifter",
+        name: "Shapeshifter",
+        faction: "impostor",
+        tags: ["Vanilla"],
+        summary: "Disguise yourself by morphing into other Crewmates.",
+        details: "The Shapeshifter is a role in Among Us that was added as a part of the roles and Cosmicubes update, version 2021.11.9. It is based on the Impostor role, and their primary goal remains the same: kill enough Crewmates to win. Along with the standard abilities that Impostors have access to, Shapeshifters have the additional ability to Shift into other players.",
+        abilities: [
+            { name: "Shift", effect: "The Shapeshifter has access to the Shift ability, which allows them to transform into any player that was alive at the beginning of the round, regardless of the role of the player. The Shapeshifter can pull up a menu of these players and select one to perfectly copy their appearance (name, color, cosmetics and even pets). During discussion time, the Shapeshifter will appear as their original self. The disguise usually only lasts for a limited time and leaves evidence behind unless otherwise set in the game's options. A player cannot shapeshift into themselves, but they can turn into another Shapeshifter." }
+        ]
+    },
+    {
+        id: "vphantom",
+        name: "Phantom",
+        faction: "impostor",
+        tags: ["Vanilla"],
+        summary: "Turn invisible to sneak around or get away from a kill.",
+        details: "The Phantom is a role in Among Us, based on the Impostor role. Their primary goal is to kill enough Crewmates to win, but, along with the standard abilities that Impostors have access to, they have the additional abilities to Vanish and Appear.",
+        abilities: [
+            { name: "Vanish", effect: "The Vanish ability lets the Phantom turn invisible for a certain amount of time." }
+        ]
     },
     {
         id: "trackerv",
@@ -47,14 +102,11 @@ const roles = [
         id: "impostor",
         name: "Impostor",
         faction: "impostor",
-        tags: ["Vanilla Classic"],
+        tags: ["Vanilla"],
         summary: "The standard Imposter.",
         details: "A master of deception and sabotage.",
-        abilities: [
-            { name: "Kill", effect: "Eliminate a player." },
-            { name: "Sabotage", effect: "Sabotage different parts of the ship to make doing tasks harder." },
-            { name: "Vent", effect: "Move through the vents for fast travel." }
-        ]
+        abilities: [],
+        displayAbilities: false
     },
     {
         id: "aurial",
@@ -128,9 +180,9 @@ const roles = [
         summary: "Reveal alliances to find evildoers!",
         details: "The Seer can compare the alignments of other players, learning if players are friendly or enemies by using their Intuit and Gaze abilities, or Reveal if comparing alignments only.",
         abilities: [
-            { name: "Intuit", effect: "Chooses a player to compare alliances of others to. The target can be changed within the same round."},
-            { name: "Gaze", effect: "Reveals the alliance between the target players when comparing alignments."},
-            { name: "Reveal", effect: "Reveals the alliance of target players when revealing alignments only."}
+            { name: "Intuit", effect: "Chooses a player to compare alliances of others to. The target can be changed within the same round." },
+            { name: "Gaze", effect: "Reveals the alliance between the target players when comparing alignments." },
+            { name: "Reveal", effect: "Reveals the alliance of target players when revealing alignments only." }
         ]
     },
     {
@@ -151,7 +203,7 @@ const roles = [
         summary: "Track suspicious players to see where they go!",
         details: "The Sonar can place markers on other players to track their general location. By placing a marker, the Tracker will see an arrow pointing towards the tracked player's position across the map. The arrows match the tracked player's colour, and will update at set intervals, allowing the Tracker to follow suspicious players and identify unusual movement.",
         abilities: [
-            { name: "Track", effect: "Places a tracker (arrow) on a player, making it so that the player's location is visible to the Tracker, updating periodically."}
+            { name: "Track", effect: "Places a tracker (arrow) on a player, making it so that the player's location is visible to the Tracker, updating periodically." }
         ]
     },
     {
@@ -162,7 +214,7 @@ const roles = [
         summary: "Snoop around and find stuff out!",
         details: "The Spy gains extra information by using the Admin table. When viewing Admin, the Spy sees the locations of all living players across the map, identified by their colours, making it easier to track and verify locations when giving alibis. The map will update whenever a player moves from one area to another, including through vent systems, as long as they are in a named location (they will not be visible outside or in hallways). Depending on settings, the Spy may also have access to a Portable Admin table, which they can activate remotely and recharge by completing tasks.",
         abilities: [
-            { name: "Admin", effect: "Opens up the admin table for a set total duration between uses."}
+            { name: "Admin", effect: "Opens up the admin table for a set total duration between uses." }
         ]
     },
     {
@@ -173,18 +225,18 @@ const roles = [
         summary: "Catch Killers in the Act!",
         details: "The Trapper can place traps around the map to learn the roles of other players. Players must stand in, or walk through, the trap for a set time to 'trap' their roles. The Trapper will see a list of the roles in the next meeting, in a randomised order.",
         abilities: [
-            { name: "Trap", effect: "Places down a trap that detects and stores the roles of people within its range after a few seconds"}
+            { name: "Trap", effect: "Places down a trap that detects and stores the roles of people within its range after a few seconds" }
         ]
     },
     {
         id: "rancher",
         name: "Rancher",
-        faction: "imposter",
+        faction: "impostor",
         tags: ["Vanilla LTM"],
         summary: "Catch all the horses to win!",
         details: "The Rancher is a primary role in the Horse Wrangling gamemode added temporarily in version 2023.3.28 for April Fools. Their goal is to wrangle the majority of the Horse Crewmates to win.",
         abilities: [
-            { name: "Track", effect: "Places a tracker (arrow) on a player, making it so that the player's location is visible to the Tracker, updating periodically."}
+            { name: "Kill", effect: "Eliminate a player." }
         ]
     }
 ];
@@ -200,9 +252,9 @@ function filterAndSort() {
 
     // Filter Logic
     let filtered = roles.filter(role => {
-        const matchesSearch = role.name.toLowerCase().includes(query) || 
-                              role.faction.toLowerCase().includes(query) ||
-                              role.summary.toLowerCase().includes(query);
+        const matchesSearch = role.name.toLowerCase().includes(query) ||
+            role.faction.toLowerCase().includes(query) ||
+            role.summary.toLowerCase().includes(query);
         const matchesTag = activeTag ? role.tags.includes(activeTag) : true;
         return matchesSearch && matchesTag;
     });
@@ -236,7 +288,7 @@ function renderTagFilters() {
     const container = document.getElementById('tagFilters');
     // Extract unique tags from the database
     const allTags = [...new Set(roles.flatMap(role => role.tags))];
-    
+
     container.innerHTML = allTags.map(tag => `
         <button class="filter-tag-btn" onclick="toggleTag('${tag}', this)">${tag}</button>
     `).join('');
@@ -260,7 +312,7 @@ function showDetail(roleId) {
     if (!role) return;
 
     const content = document.getElementById('role-content');
-    
+
     // Ability Logic: Only builds HTML if displayAbilities isn't false AND there are abilities
     let abilitiesHTML = "";
     if (role.displayAbilities !== false && role.abilities && role.abilities.length > 0) {
@@ -294,7 +346,7 @@ function showDetail(roleId) {
 
     document.getElementById('catalog-view').style.display = 'none';
     document.getElementById('detail-view').style.display = 'block';
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 }
 
 function showCatalog() {

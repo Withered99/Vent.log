@@ -4,7 +4,7 @@ const roles = [
         id: "crewmate",
         name: "Crewmate",
         faction: "crewmate",
-        tags: ["Vanilla"],
+        tags: ["Vanilla Classic"],
         summary: "The standard Crewmate.",
         details: "Do tasks or vote out Imposters to win.",
         abilities: [],
@@ -14,7 +14,7 @@ const roles = [
         id: "impostor",
         name: "Impostor",
         faction: "impostor",
-        tags: ["Vanilla"],
+        tags: ["Vanilla Classic"],
         summary: "The standard Imposter.",
         details: "A master of deception and sabotage.",
         abilities: [
@@ -117,6 +117,17 @@ const roles = [
         tags: ["TOU: Mira", "TOU: Reactivated", "TheOtherRoles", "AllTheRoles", "StellarRolesAU"],
         summary: "Track suspicious players to see where they go!",
         details: "The Sonar can place markers on other players to track their general location. By placing a marker, the Tracker will see an arrow pointing towards the tracked player's position across the map. The arrows match the tracked player's colour, and will update at set intervals, allowing the Tracker to follow suspicious players and identify unusual movement.",
+        abilities: [
+            { name: "Track", effect: "Places a tracker (arrow) on a player, making it so that the player's location is visible to the Tracker, updating periodically."}
+        ]
+    },
+    {
+        id: "rancher",
+        name: "Rancher",
+        faction: "imposter",
+        tags: ["Vanilla LTM"],
+        summary: "Catch all the horses to win!",
+        details: "The Rancher is a primary role in the Horse Wrangling gamemode added temporarily in version 2023.3.28 for April Fools. Their goal is to wrangle the majority of the Horse Crewmates to win.",
         abilities: [
             { name: "Track", effect: "Places a tracker (arrow) on a player, making it so that the player's location is visible to the Tracker, updating periodically."}
         ]
